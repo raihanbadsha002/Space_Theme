@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: var(--pure);
+    
+}
+html {
+    scroll-behavior: smooth;
+  }
+:root{
+ --primary: #1E1E1E;
+ --dark: #121212;
+ --pure: #ffffff;
+ --gray: #1d1d1d;
+ --mild: #b9b8b8;
+}
+
+header{
+    background: linear-gradient(135deg ,rgba(0,0,0,1),rgba(0,0,0,0.2)) , url('../img/sunrise.jpg');
+    min-height: 100vh;
+    background-size: cover;
+
+    & nav{
+        border-bottom: 1px solid var(--gray);
+
+        & .navbar-brand{
+            & img{
+                width: 70%;
+            }
+        }
+
+        & .nav-item{
+           
+           & .nav-link{
+               color: var(--pure) !important;
+                position: relative;
+                margin-right: .8rem;
+                font-size: .9rem;
+
+               &::after{
+                   position: absolute;
+                   content: "";
+                   bottom: -.6rem;
+                   left: .5rem;
+                   width: 0%;
+                   height: 2px;
+                   background: var(--pure);
+                   transition: all .4s ease-in-out;  
+               }
+               &:hover::after{
+                width: 80%;
+               }
+               &.active::after{
+                   width: 80%;
+               }
+           
+           
+         }
+        }
+        & form{
+            background: var(--gray) !important;
+            border-radius: 50px;
+            width: 24% !important;
+            
+
+
+            & img{
+                padding: .4rem 0rem .4rem .8rem;
+            }
+            & input{
+                background: transparent !important;
+                border: none !important;
+                outline: none !important;
+                border-radius: 50px !important; 
+                color: var(--pure) !important; 
+                width: 78% !important; 
+                font-size: .9rem !important;
+                
+                &:focus{
+                    box-shadow: none !important;
+                }
+        }
+    }
+  }
+
+//   Hero Section
+
+& .heroSec{
+    & .social{
+      min-height: 91vh; 
+      border-right: 1px solid var(--gray);  
+     
+
+      & a{
+          text-decoration: none;
+          width: 30px;
+          height: 30px;
+          color: var(--pure);
+          border: 1px solid var(--pure);
+          margin-bottom: .8rem;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all .4s ease-in-out;
+          opacity: 0;
+
+          &:hover{
+              color: var(--dark);
+              background: var(--pure);
+              
+          }
+      }
+    }
+
+    // Social Animation
+
+    @keyframes moveIn {
+        from{
+          transform: translateX(-100px);
+        }
+        to{
+            transform: translateX(0px);
+            opacity: 1;
+        }    
+     }
+   
+ }
+
+ .hero_long{
+     height: 90vh;
+     
+
+     & .left_Sec{
+        transform: translateX(15%);
+         & h1{
+             font-size: 1.1rem;
+             font-weight: 400;
+             line-height: 1.6;      
+             
+         }
+         & button{
+             background: var(--pure);
+             border-radius: 50px;
+             font-size: .8rem;
+             margin-top: .6rem;
+             transition: all .4s ease;
+
+             &:hover{
+                 border: 1px solid var(--pure);
+                 color: var(--pure);
+                 background: transparent;
+             }
+         }
+     }
+     & .right_section{
+        transform: translateX(15%);
+
+        & img{
+            transform: rotate(20deg);
+          animation: moveInspace 10s ease-in-out infinite alternate;
+        }
+
+        // Astronaut Animation
+
+        @keyframes moveInspace {
+
+            50%{
+                transform: translateX(100px) rotate(-30deg) scale(0.5);
+            }
+            
+        }
+     }
+ }
+}
+
+.call_action{
+    background: var(--dark);
+    height: 4rem;
+
+    & h2{
+        font-size: 1rem;
+    }
+    & .mission_btn{
+        
+        & button{
+            background: var(--pure);
+            padding: .3rem 1.4rem;
+            border-radius: 50px;
+            font-size: .8rem;
+            transition: all .4s ease;
+
+            &:hover{
+                border: 1px solid var(--pure);
+                color: var(--pure);
+                background: transparent;
+            }
+        }
+    }
+}
+
+// Rocket section Css
+.rocket{
+    padding: 6rem 0rem;
+   background: var(--primary);
+
+   & .left-block{
+       width: 90%;
+      & .block{
+
+        
+          & .with-underline{
+              position: relative;
+              padding: .6rem 0rem;
+              margin-bottom: 1rem;
+
+              &::before{
+                  content: "";
+                  position: absolute;
+                  display: block;
+                  left: 2px;
+                  bottom: 0;
+                  width: 25%;
+                  height: 2px;
+                  background-color: var(--pure);
+              }
+          }
+         & h2{
+             font-weight: 400;
+             font-size: 1.8rem;
+         }
+         & p{
+             font-size: .8rem;
+         }
+    }
+
+
+    & .block_second{
+           padding-top: 2.5rem;
+
+           & .with-underline{
+            position: relative;
+            padding: .6rem 0rem;
+            margin-bottom: 1rem;
+
+            &::before{
+                content: "";
+                position: absolute;
+                display: block;
+                left: 2px;
+                bottom: 0;
+                width: 45%;
+                height: 2px;
+                background-color: var(--pure);
+            }
+        }
+        & .with-underline2{
+            position: relative;
+            padding: .6rem 0rem;
+            margin-bottom: 1rem;
+   
+            &::before{
+                content: "";
+                position: absolute;
+                display: block;
+                left: 2px;
+                bottom: 0;
+                width: 28%;
+                height: 2px;
+                background-color: var(--pure);
+            }
+        }
+        & h3{
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+
+            & button{
+                background: transparent ;
+                padding: .3rem 1.4rem;
+                color: var(--pure);
+                border-radius: 50px;
+                font-size: .8rem;
+                border: 1px solid var(--pure);
+                transition: all .4s ease;
+    
+                &:hover{
+                    
+                    color: var(--dark);
+                    background: var(--pure);
+                }
+            }
+        
+       }
+
+       & .capacity{
+           padding-top: 1.7rem;
+
+           & .engine{
+               margin-right: 1.8rem;
+           }
+
+           & h4{
+               font-size: .7rem;
+               font-weight: 400;
+           }
+           & h6{
+               margin-top: -7px;
+               font-size: 1.5rem;
+               font-weight: 400;
+           }
+           & sub{
+               font-size: .6rem;
+               font-weight: 400;
+           }
+       }
+       & .sea_level{
+           margin-top: -20px;
+       }
+   }
+// Incomplete============
+
+& .rocket-body span{
+   position: relative;
+}
+& .rocket-body span::after, .rocket-body span:nth-child(3)::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--pure);
+  transition: width 1s ease;
+}
+& .rocket-body span:nth-child(1):after{
+  bottom: 30%;
+  left: 89%;
+}
+& .rocket-body span:nth-child(2):after{
+  bottom: 63%;
+  right: 98%;
+}
+& .rocket-body span:nth-child(3):after{
+  bottom: 63%;
+  right: 92%;
+}
+& .rocket-body span:nth-child(3)::before{
+  bottom: 42%;
+  left:92%;
+}
+
+/*Width Create in here*/
+& .rocket-body span.active:nth-child(1):after{
+   width: 120px;
+   animation: jump 1s ease-in-out forwards;
+  }
+  & .rocket-body span.active:nth-child(2):after{
+   width: 135px;
+  }
+  & .rocket-body span.active:nth-child(3):after{
+    width: 199px;
+  }
+  & .rocket-body span.active:nth-child(3)::before{
+    width: 120px;
+  }
+
+
+
+
+  @keyframes jump {
+
+    50% {
+        transform: translateY(-40px);
+    }
+      
+  }
+  & .rocket-body span.active:nth-child(1){
+    animation: jump 1s ease-in-out forwards;
+   }
+
+
+
+// ==============?
+   & .right-block{
+    padding-top: 5.1rem; 
+    width: 90%;
+      & .block{
+         
+          & .payload{
+              padding-left: 4rem;
+              padding-bottom: .5rem;
+          }
+         & h2{
+             font-weight: 400;
+             font-size: 1.4rem;
+         }
+         & p{
+             font-size: .8rem;
+         }
+       }
+
+       & .nine_eng{
+           & h2{
+             font-size: .9rem;  
+           }
+        
+     }
+       & .block_second{
+        padding-top: 1rem;
+
+        & .with-underline{
+         position: relative;
+         padding: .6rem 0rem;
+         margin-bottom: 1rem;
+
+         &::before{
+             content: "";
+             position: absolute;
+             display: block;
+             left: 2px;
+             bottom: 0;
+             width: 40%;
+             height: 2px;
+             background-color: var(--pure);
+         }
+     }
+     & h3{
+         font-size: 1.4rem;
+         font-weight: 400;
+     }
+    }
+
+    & .capacity{
+        margin-top: 4rem;
+
+        & .engine{
+            margin-right: 1.8rem;
+        }
+
+        & h4{
+            font-size: .7rem;
+            font-weight: 400;
+        }
+        & h6{
+            margin-top: -7px;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        & sub{
+            font-size: .6rem;
+            font-weight: 400;
+        }
+        & .with-underline{
+                    position: relative;
+                    padding: .6rem 0rem;
+                    margin-bottom: 1rem;
+        
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        left: 2px;
+                        bottom: 0;
+                        width: 40%;
+                        height: 2px;
+                        background-color: var(--pure);
+                    }
+                }
+
+     }
+     & .sea_level{
+        margin-top: 20px;    
+
+    }
+    & .ebg_img{
+        & img{
+            width: 40%;
+        }
+    }   
+}
+
+& .boat{
+    position: sticky;
+    top: 60px;
+}
+}
+
+footer{
+    padding: 3rem 0rem;
+    background-color: var(--dark);
+
+    & .footer_logo{
+       & img{
+            display: block;
+            width: 80%;
+        }
+       & span{
+            padding: .1rem 0;
+            font-size: .7rem;
+            font-weight: 400;
+            color: var(--mild);
+        }
+    }
+
+    & .about_link, .quick_link, .social_link{
+
+       & h1{
+            font-size: 1rem;
+            position: relative;
+            margin-bottom: 15px;
+
+            &::after{
+                position: absolute;
+                content: '';
+                display: block;
+                bottom: -5px;
+                width: 20%;
+                height: 2px;
+                background: var(--pure);
+            }
+    
+            }
+
+           li{
+               list-style: none;
+
+           } 
+           a{
+               color: var(--mild);
+               font-size: .8rem;
+               text-decoration: none;
+               transition: all .3s ease;
+
+              &:hover{
+                color: var(--pure);
+              } 
+           }
+           i{
+               margin-right: .5rem;
+           }
+      }
+}
